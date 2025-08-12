@@ -1,59 +1,99 @@
+/* Root container */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  height: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
+/* Page layout */
 .page {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap; /* Allows content to wrap on smaller screens */
 }
 
+/* Main background */
 .main {
   background-image: url("./assets/moon.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
 
+/* Text styles */
 .text {
   color: red;
-  font-size: 48px;
+  font-size: 3rem; /* Scales better than fixed px */
+  text-align: center;
+  padding: 1rem;
 }
 
 .next-page {
-  font-size: 64px;
+  font-size: 4rem; /* Responsive unit */
+  padding: 1rem;
 }
 
-.sunflower {
-  background-image: url("./assets/sunflower.jpg");
+/* Shared background section styles */
+.sunflower,
+.snake {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Specific backgrounds */
+.sunflower {
+  background-image: url("./assets/sunflower.jpg");
 }
 
 .snake {
   background-image: url("./assets/snake.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vh;
-  align-items: center;
-  justify-content: center;
-  display: flex;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .text {
+    font-size: 2rem;
+  }
+
+  .next-page {
+    font-size: 3rem;
+  }
+
+  .page {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .text {
+    font-size: 1.5rem;
+  }
+
+  .next-page {
+    font-size: 2.5rem;
+  }
+
+  #root {
+    padding: 1rem;
+  }
 }

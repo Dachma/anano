@@ -69,6 +69,34 @@
   background-image: url("./assets/snake.jpg");
 }
 
+.bg-half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0; /* behind iframe */
+}
+
+.bg-half.left {
+  left: 0;
+  background-image: url('./assets/foto2.jpg');
+}
+
+.bg-half.right {
+  right: 0;
+  background-image: url('./assets/foto1.jpg');
+}
+
+.iframe-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* above backgrounds */
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
   .text {
